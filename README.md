@@ -1,0 +1,2 @@
+# SafeRoomDemo
+使用SQLCipher对Room的数据库进行加密
