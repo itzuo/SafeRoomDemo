@@ -1,0 +1,26 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+}
+
+dependencies {
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    implementation "net.zetetic:android-database-sqlcipher:3.5.9@aar"
+    implementation "android.arch.persistence.room:runtime:${ARCHITECTURE_VERSION}"
+    annotationProcessor "android.arch.persistence.room:compiler:${ARCHITECTURE_VERSION}"
+}
